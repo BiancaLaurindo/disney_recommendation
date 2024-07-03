@@ -104,4 +104,4 @@ Agora, todas as dependências necessárias devem estar instaladas no seu ambient
 
 - [Link para o dataset](https://www.kaggle.com/code/shivamb/disney-shows-and-movies-exploratory-analysis/notebook)
 - Documentação das bibliotecas utilizadas: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
-  Deus me ajude
+
