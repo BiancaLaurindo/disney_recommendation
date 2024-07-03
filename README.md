@@ -11,7 +11,7 @@ Como podemos recomendar filmes e shows da Disney que atendam aos interesses dos 
 - Desenvolvendo um modelo de recomendação;
 - Melhorando a satisfação do usuário.
 
-Fonte do Dataset: https://www.kaggle.com/code/shivamb/disney-shows-and-movies-exploratory-analysis/notebook
+Fonte do Dataset: https://www.kaggle.com/datasets/victorsoeiro/disney-tv-shows-and-movies/data?select=titles.csv
 Critérios de Seleção: Seleção de filmes e shows com base em popularidade, gênero, classificações, título, Ano de Lançamento, Nota dos Usuários.
 
 Data Wrangling Processo: Limpeza de dados, tratamento de valores nulos, transformação de variáveis categóricas
