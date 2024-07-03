@@ -1,8 +1,8 @@
 # disney_recommendation (Sistema de Recomendação para Filmes e Shows da Disney)
 
-Disney é uma das maiores empresas de entretenimento do mundo, oferecendo uma vasta gama de filmes e shows.
+O Disney Plus é uma plataforma de streaming que possui uma vasta quantidade de títulos de filmes e shows disponíveis para os usuários.
 
-Contextualização: O objetivo é criar um sistema de recomendação para shows e filmes da Disney, e melhorar a experiência dos usuários dessa eficiência, ajudando-os a descobrir novos conteúdos de seu interesse.
+Contextualização: O objetivo é criar um sistema de recomendação para shows e filmes no Disney Plus, e melhorar a experiência dos usuários de forma eficiente, ajudando-os a descobrir novos conteúdos de seu interesse.
 
 Problema Abordado: Ajudar os usuários a descobrir novos conteúdos que possam gostar, melhorando a experiência de uso da plataforma.
 
