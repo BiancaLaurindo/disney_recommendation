@@ -1,0 +1,111 @@
+# Importações e Configurações Iniciais
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.decomposition import PCA
+from sklearn.neighbors import NearestNeighbors
+
+# Configurações para melhorar a visualização
+plt.style.use('ggplot')
+sns.set(style='whitegrid')
+
+# Carregamento dos Dados
+# Leitura do dataset a partir de um arquivo CSV
+data = pd.read_csv('path_to_disney_dataset.csv')
+
+# Exibindo as primeiras linhas do dataset para inspeção
+data.head()
+
+# Limpeza e Pré-processamento dos Dados
+
+# Verificação de valores ausentes no dataset
+data.isnull().sum()
+
+# Remoção de valores nulos
+data = data.dropna()
+
+# Transformação de variáveis categóricas em numéricas
+# Convertendo a coluna 'genre' para códigos numéricos
+data['genre'] = data['genre'].astype('category').cat.codes
+
+# Verificando os tipos de dados após a transformação
+data.dtypes
+
+# Análise Exploratória dos Dados (EDA)
+
+# Análise Univariada
+# Distribuição das Notas
+plt.figure(figsize=(10, 6))
+sns.histplot(data['rating'], bins=20, kde=True)
+plt.title('Distribuição das Notas')
+plt.xlabel('Nota')
+plt.ylabel('Frequência')
+plt.show()
+
+# Distribuição dos Gêneros
+plt.figure(figsize=(10, 6))
+sns.countplot(y='genre', data=data, order=data['genre'].value_counts().index)
+plt.title('Distribuição dos Gêneros')
+plt.xlabel('Frequência')
+plt.ylabel('Gênero')
+plt.show()
+
+# Análise Bivariada
+# Distribuição das Notas por Gênero
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='genre', y='rating', data=data)
+plt.title('Distribuição das Notas por Gênero')
+plt.xlabel('Gênero')
+plt.ylabel('Nota')
+plt.show()
+
+# Correlação entre variáveis numéricas
+plt.figure(figsize=(10, 6))
+sns.heatmap(data.corr(), annot=True, cmap='coolwarm', vmin=-1, vmax=1)
+plt.title('Mapa de Correlação')
+plt.show()
+
+# Análise Multivariada
+
+# Análise de Componentes Principais (PCA)
+# Redução de dimensionalidade para 2 componentes principais
+pca = PCA(n_components=2)
+principal_components = pca.fit_transform(data[['genre', 'rating']])
+pca_df = pd.DataFrame(data=principal_components, columns=['PC1', 'PC2'])
+
+# Visualização dos Componentes Principais
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='PC1', y='PC2', data=pca_df)
+plt.title('Análise de Componentes Principais (PCA)')
+plt.xlabel('Componente Principal 1')
+plt.ylabel('Componente Principal 2')
+plt.show()
+
+# Criação do Modelo de Recomendação
+
+# Seleção das características para o modelo
+X = data[['genre', 'rating']]
+
+# Inicialização do modelo K-Nearest Neighbors
+model = NearestNeighbors(n_neighbors=5, algorithm='auto')
+
+# Treinamento do modelo
+model.fit(X)
+
+# Exemplo de recomendação
+# Selecionando um exemplo aleatório para recomendação
+example = X.sample(1)
+
+# Encontrando os 5 vizinhos mais próximos
+distances, indices = model.kneighbors(example)
+
+# Exibindo os resultados das recomendações
+recommended_indices = indices[0]
+recommended_data = data.iloc[recommended_indices]
+print("Exemplo selecionado:")
+print(example)
+print("\nRecomendações:")
+print(recommended_data)
