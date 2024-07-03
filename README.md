@@ -1,5 +1,7 @@
 # disney_recommendation (Sistema de Recomendação para Filmes e Shows da Disney)
 
+INTRODUÇÃO:
+
 Disney é uma das maiores empresas de entretenimento do mundo, oferecendo uma vasta gama de filmes e shows.
 
 Contextualização: O objetivo é criar um sistema de recomendação para shows e filmes da Disney, e melhorar a experiência dos usuários dessa eficiência, ajudando-os a descobrir novos conteúdos de seu interesse.
@@ -28,3 +30,10 @@ Filtros e Distribuição
 
 Métricas de Desempenho
 - Precisão, recall, F1-score, etc
+
+
+
+
+
+
+
