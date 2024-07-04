@@ -34,6 +34,16 @@ data['genre'] = data['genre'].astype('category').cat.codes
 # Verificando os tipos de dados após a transformação
 data.dtypes
 
+# Análise de Correlação
+# Cálculo da matriz de correlação
+correlation_matrix = data.corr()
+
+# Visualização da matriz de correlação
+plt.figure(figsize=(12, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
+plt.title('Matriz de Correlação')
+plt.show()
+
 # Análise Exploratória dos Dados (EDA)
 
 # Análise Univariada
@@ -62,11 +72,6 @@ plt.xlabel('Gênero')
 plt.ylabel('Nota')
 plt.show()
 
-# Correlação entre variáveis numéricas
-plt.figure(figsize=(10, 6))
-sns.heatmap(data.corr(), annot=True, cmap='coolwarm', vmin=-1, vmax=1)
-plt.title('Mapa de Correlação')
-plt.show()
 
 # Análise Multivariada
 
