@@ -28,3 +28,11 @@ Filtros e Distribuição
 
 Métricas de Desempenho
 - Precisão, recall, F1-score, etc
+
+Modelo de recomendaação simples: RandomForestClassifier
+ "O Random Forest é um modelo de ensemble que combina múltiplas árvores de decisão para melhorar a precisão e a robustez do modelo. O RandomForestClassifier é uma escolha sólida, ele é eficaz para conjuntos de dados que contêm tanto variáveis categóricas quanto numéricas e é conhecido por ser resistente ao overfitting, especialmente em problemas de classificação."
+
+ Por que o Random Forest?
+Robustez: é menos suscetível ao overfitting em comparação com uma única árvore de decisão.
+Versatilidade: Funciona bem com dados categóricos e numéricos
+Interpretabilidade: A importância das features pode ser facilmente extraída e interpretada.
